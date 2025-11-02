@@ -2,7 +2,7 @@
 Goto: https://console.groq.com/home
 Click on the API keys tab.
 Click on the + button to create a new API key.
-Name itOpsimateAI
+Name it OpsimateAI
 Copy the API key.
 create a .env file and put it in the .env file from the .env-example file.
 
