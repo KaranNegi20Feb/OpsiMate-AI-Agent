@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Opsimate AI Agent</title>
+  <style>
+    body { font-family: sans-serif; background: #f9fafb; padding: 2rem; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 0.8rem; margin-top: 1rem; }
+    button { background: #2563eb; color: white; border: none; cursor: pointer; border-radius: 0.5rem; }
+    button:hover { background: #1d4ed8; }
+    .response { margin-top: 1.5rem; background: #eef2ff; padding: 1rem; border-radius: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Opsimate AI Agent 🤖</h2>
+    <form id="chat-form">
+      <input id="user_input" placeholder="e.g. Create a user Karan Singh (viewer)" />
+      <button type="submit">Send</button>
+    </form>
+    <div class="response" id="response"></div>
+  </div>
+
+  <script>
+    document.getElementById("chat-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const input = document.getElementById("user_input").value;
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ user_input: input })
+      });
+      const data = await res.json();
+      document.getElementById("response").innerText = data.response;
+    });
+  </script>
+</body>
+</html>

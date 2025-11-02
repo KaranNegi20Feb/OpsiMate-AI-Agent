@@ -1,0 +1,4 @@
+flask
+groq
+requests
+python-dotenv
