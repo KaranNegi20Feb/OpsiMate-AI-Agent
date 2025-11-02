@@ -18,5 +18,10 @@ open http://localhost:5000 in your browser.
 Create a new editor user with email raghav@opsimate.com , full name Raghav Singh, and password Raghav@12345.
 Show me all users in the system.
 Change the role of raghav@opsimate.com to viewer.
+Create a secret called SecKaran with kubeconfig file.
+Create a cluster called KaranNegi1 with the secret SecKaran.
+Change the role of user with email idan@opsimate.com to editor and also show me all the users with their roles
+Create a kubeconfig secret named SecKaran from /Users/karannegi/Karan-One/kubeconfig and then create a K8S provider named KaranNegi1 using that secret.
+
 
 
